@@ -7,6 +7,9 @@ const port = 3000
 const express = require('express')
 const app = express()
 
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
+
 const es6Renderer = require('express-es6-template-engine')
 
 app.engine('html', es6Renderer)
